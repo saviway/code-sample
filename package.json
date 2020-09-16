@@ -1,6 +1,6 @@
 {
-  "name": "rollup-react-package-template",
-  "version": "0.1.0",
+  "name": "@tradefora-ui/dataguard-symbol-picker",
+  "version": "3.0.0-alpha",
   "description": "A template to fast create npm packages which contain react components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,9 +13,6 @@
   },
   "author": "Ivan Savinov - noFl3x",
   "license": "MIT",
-  "repository": {
-    "url": "git@github.com:saviway/react-package-template-rollup.git"
-  },
   "peerDependencies": {
     "react": "^16.13.1"
   },
