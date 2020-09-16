@@ -1,8 +1,9 @@
-import { sum } from '../index'
+import { render } from '@testing-library/react'
+import { withSimpleText } from '../../stories/SimpleComponent/SimpleComponent.stories'
 
-describe('index file', () => {
-  it(('should get right sum'), () => {
-    const result: number = sum(2, 3)
-    expect(result).toBe(5)
+describe('SimpleComponent', () => {
+  it('should contain text', () => {
+    const comp = render(withSimpleText({ text: 'Simple text' }))
+    expect(comp.getByText('Simple text')).toBeTruthy()
   })
 })
