@@ -1,7 +1,7 @@
 {
   "name": "rollup-react-package-template",
   "version": "0.1.0",
-  "description": "React component package template",
+  "description": "A template to fast create npm packages which contain react components",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
@@ -11,11 +11,25 @@
     "commitlint": "node ./node_modules/commitlint/cli.js",
     "prettier": "./node_modules/prettier/bin-prettier.js --write ./src"
   },
-  "author": "Ivan Savinov",
+  "author": "Ivan Savinov - noFl3x",
   "license": "MIT",
+  "repository": {
+    "url": "git@github.com:saviway/react-package-template-rollup.git"
+  },
   "peerDependencies": {
     "react": "^16.13.1"
   },
+  "keywords": [
+    "npm package",
+    "typescript",
+    "boilerplate",
+    "template",
+    "reactjs"
+  ],
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
     "@storybook/addon-actions": "^6.0.21",
