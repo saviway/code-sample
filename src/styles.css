@@ -1,130 +1,122 @@
-
-.symbols-picker {
+/* Source symbol container */
+.source-symbol-picker {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    width: 100%;
 }
 
-.symbols-picker_listContent {
+/* columns in source symbol containers */
+.source-symbol-picker_column {
     overflow-y: scroll;
-    border: 1px solid #d0d9e2;
+    overflow-x: hidden;
+    width: 50%;
+    /*padding: 0 .6rem;*/
 }
 
-.sources-list ul.sources-list_ul {
+/* common styles of lists in source symbol picker container */
+.source-symbol-picker_column ul, ul.sources-list_ul, ul.symbols-list_ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.sources-list ul.sources-list_ul li {
+/* addition styles for sources container within source-symbol - picker */
+.source-symbol-picker_column.sources-section {
+    /*border-right: .1rem solid #d0d9e2;*/
+    box-shadow: inset -2px 0 0 #d0d9e2
+}
+
+/* addition styles for symbols container */
+.source-symbol-picker_column.symbols-section {
+    /*border-left: .1rem solid #d0d9e2;*/
+}
+/* common styles for sources/symbols items (excluding Select All item) */
+ul.sources-list_ul li.item, ul.symbols-list_ul li.item {
     padding: .8rem;
     cursor: pointer;
     border-bottom: 1px solid #d0d9e2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.sources-list ul.sources-list_ul li.disabled {
-    cursor: not-allowed;
-    color: #8f95a3;
-    background: #f1f2f4;
-}
-
-.sources-list ul.sources-list_ul li.disabled:hover {
-    cursor: not-allowed;
-    color: #8f95a3;
-    background: #f1f2f4;
-}
-
-.sources-list ul.sources-list_ul li:hover {
+/* Hover styles of lists' items */
+ul.sources-list_ul li.item:hover, ul.symbols-list_ul li.item:hover {
     background: rgba(239, 243, 255, .5);
-    color: #404040;
+    color: #000;
 }
 
-.sources-list ul.sources-list_ul li.active {
-    /* background: rgba(239, 243, 255, .5); */
+/*lists' items disabled styles */
+ul.symbols-list_ul li.disabled, ul.symbols-list_ul li.disabled:hover {
+    cursor: not-allowed;
+    color: #8f95a3;
+    background: #f1f2f4;
+}
+
+/* Common styles for lists' active item */
+ul.sources-list_ul li.item.active, ul.symbols-list_ul li.item.active {
+    background-color: #f0f6ff;
+    border-left: 3px solid #0070e0;
+    box-shadow: inset -2px 0 0 #d0d9e2;
+    color: #000;
+}
+
+/* common styles for select all item */
+ul.sources-list_ul li.select-all-item, ul.symbols-list_ul li.select-all-item {
+    padding: .8rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: .8rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d0d9e2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Common styles for lists' SelectAll items which are have active class */
+ul.sources-list_ul li.select-all-item.active, ul.symbols-list_ul li.select-all-item.active {
     background-color: #f0f6ff;
     border-left: 3px solid #0070e0;
     color: #000;
 }
 
-
-.sources-list ul.sources-list_ul li span.inactive-info {
-    font-size: .5rem;
-}
-
-.symbols-list ul.symbols-list_ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.symbols-list ul.symbols-list_ul li {
-    padding: .8rem;
-    cursor: pointer;
-    border-bottom: 1px solid #d0d9e2;
-}
-
-.symbols-list ul.symbols-list_ul li.disabled, .symbols-list ul.symbols-list_ul li.disabled:hover {
-    cursor: not-allowed;
-    color: #8f95a3;
-    background: #f1f2f4;
-}
-
-.symbols-list ul.symbols-list_ul li:hover {
-    background: rgba(239, 243, 255, .5);
-    color: #000;
-}
-
-.symbols-list ul.symbols-list_ul li.active {
-    background: rgba(239, 243, 255, .5);
-    color: #016fe0;
-    border-left: 3px solid #0070e0;
-}
-
-
-.symbol-picker_formInput {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #fff;
-    background-image: none;
-    border: .05rem solid #bcc3ce;
-    border-radius: .1rem;
-    color: #3b4351;
+/* styles for addition info that is inside sources list items */
+ul.sources-list_ul li.item span {
     display: block;
-    /*font-size: .8rem;*/
-    font-size: inherit;
-    height: 1.8rem;
-    width: 190px;
-    line-height: 1.2rem;
-    outline: none;
-    padding: .25rem .4rem;
-    position: relative;
-    transition: background .2s, border .2s, box-shadow .2s, color .2s;
-    /*width: 100%;*/
+    font-size: .7rem;
 }
 
-.symbol-picker_formInput:focus {
-    border-color: #5755d9;
-    box-shadow: 0 0 0 .1rem rgba(87, 85, 217, .2);
+/* styles of */
+ul.symbols-list_ul li.item span {
+    display: block;
+    font-size: .7rem;
 }
 
-.symbol-picker_formInput:-ms-input-placeholder {
-    color: #bcc3ce;
+/* input container */
+.input_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+/* input styles */
+input.input {
+    width: 90%;
+    padding: 0.5em 0.6em;
+    display: inline-block;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+input.input[disabled] {
+    cursor: not-allowed;
+    background-color: #eaeded;
+    color: #cad2d3;
 }
 
-.symbol-picker_formInput::-ms-input-placeholder {
-    color: #bcc3ce;
-}
-
-.symbol-picker_formInput::placeholder {
-    color: #bcc3ce;
-}
-
-.symbols-picker_srcColumn {
-    /* overflow-y: hidden; */
-    width: 50%;
-}
-.symbols-picker_symbolColumn {
-    /* overflow-y: hidden; */
-    width: 50%;
+input.input:focus {
+    outline: 0;
+    border-color: #129FEA;
 }

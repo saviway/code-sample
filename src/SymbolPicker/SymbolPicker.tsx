@@ -51,10 +51,15 @@ export function SymbolPickerComponent(props: SymbolPickerComponentProps): JSX.El
           <li
             key={i}
             onClick={createOnSelectHandler(s)}
-            className={clsx({
-              active: (selectedEntity !== null && selectedEntity.id === s.id) || value.type === VALUE_ALL,
-              disabled,
-            })}
+            className={clsx(
+              {
+                active:
+                  (selectedEntity !== null && selectedEntity.id === s.id) ||
+                  value.type === VALUE_ALL,
+                disabled,
+              },
+              'item'
+            )}
           >
             {s.symbol}
 
@@ -79,7 +84,16 @@ export function SymbolPicker(props: ISymbolPickerProps): JSX.Element {
   if (allowFiltering) {
     return (
       <div className="symbol-picker-wrapper">
-        <input type="text" value={filterValue} onChange={onFilterChange} disabled={disabled} />
+        <div className="input_container">
+          <input
+            className="input"
+            type="text"
+            value={filterValue}
+            onChange={onFilterChange}
+            disabled={disabled}
+            placeholder="type to filter"
+          />
+        </div>
         <FilterableSource
           component={SymbolPickerComponent}
           targetProps={rest}

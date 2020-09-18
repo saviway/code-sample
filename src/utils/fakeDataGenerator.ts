@@ -23,7 +23,7 @@ export const FAKE_SOURCES: Array<ISourceEntity> = [
     name: 'Source 3',
     started: 1546300800000,
     ended: 1569887999999,
-  }
+  },
 ]
 
 export function generateFakeSources(amount: number = 100): Array<ISourceEntity> {
@@ -34,7 +34,7 @@ export function generateFakeSources(amount: number = 100): Array<ISourceEntity> 
       id: i,
       name: `Source-${i}`,
       started: new Date('01/01/2020').getTime(),
-      ended: Math.random() < 0.5 ? null : new Date('01/29/2020').getTime()
+      ended: Math.random() < 0.5 ? null : new Date('01/29/2020').getTime(),
     })
   }
 
@@ -51,46 +51,58 @@ export const FAKE_SYMBOLS: Array<ISymbolEntity> = [
     // name: 'CADJPY',
     symbol: 'CADJPY',
     reportSymbol: 'CADJPY_',
-    systemSymbol: 'CADJPY'
+    systemSymbol: 'CADJPY',
   },
   {
     id: 1001,
     // name: 'EURUSD',
     symbol: 'EURUSD',
     reportSymbol: 'EURUSB#',
-    systemSymbol: 'EURUSB'
+    systemSymbol: 'EURUSB',
   },
   {
     id: 1002,
     // name: 'BTCUSD',
     symbol: 'BTCUSD',
     reportSymbol: 'BTCUSD',
-    systemSymbol: 'BTCUSD'
-  }
+    systemSymbol: 'BTCUSD',
+  },
 ]
 
-export function generateFakeSymbols(amount: number = 100, minId: number = 1000): Array<ISymbolEntity> {
+export function generateFakeSymbols(
+  amount: number = 100,
+  minId: number = 1000,
+  sourceId?: number,
+  sourceName?: string
+): Array<ISymbolEntity> {
   let result: Array<ISymbolEntity> = []
   for (let i = 1; i <= amount; i++) {
-    result.push({
+    const entity: ISymbolEntity = {
       id: minId + i,
       // name: `symbol-${minId + i}`,
       symbol: `symbol-${minId + i}`,
       reportSymbol: `symbol-${minId + i}`,
-      systemSymbol: `symbol-###_${minId + i}`
-    })
+      systemSymbol: `symbol-###_${minId + i}`,
+    }
+    if (sourceId && sourceName) {
+      entity.sourceId = sourceId
+      entity.sourceName = sourceName
+    }
+    result.push(entity)
   }
 
   return result
 }
 
-export function generateSymbolsMap(sources: Array<ISourceEntity>, symbolsCount: number = 50): {[key: number]: Array<ISymbolEntity>} {
+export function generateSymbolsMap(
+  sources: Array<ISourceEntity>,
+  symbolsCount: number = 50
+): { [key: number]: Array<ISymbolEntity> } {
   // const result = {}
   const result = sources.reduce((acc, val) => {
-
     return {
       ...acc,
-      [val.id]: generateFakeSymbols(symbolsCount, (val.id * 100))
+      [val.id]: generateFakeSymbols(symbolsCount, val.id * 100, val.id, val.name),
     }
   }, {})
 

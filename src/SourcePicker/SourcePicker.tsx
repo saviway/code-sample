@@ -66,14 +66,18 @@ export function SourcePickerComponent(props: SourcePickerComponentProps): JSX.El
             <li
               onClick={createOnSelectHandler(s)}
               key={i}
-              className={clsx({
-                active: selectedEntity !== null && selectedEntity.id === s.id,
-                disabled,
-              })}
+              className={clsx(
+                {
+                  active: selectedEntity !== null && selectedEntity.id === s.id,
+                  disabled,
+                },
+                'item'
+              )}
             >
               {s.name}
               {showInactiveInfo && s.ended && true && (
                 <span>
+                  Inactive since: &nbsp;
                   {inActiveComponent
                     ? inActiveComponent(s.ended)
                     : defaultInactiveComponent(s.ended)}
@@ -106,7 +110,16 @@ export function SourcePicker(props: ISourcePickerProps): JSX.Element {
   if (allowFiltering) {
     return (
       <div className="source-picker-wrapper">
-        <input type="text" value={filterValue} onChange={onFilterChange} disabled={disabled} />
+        <div className="input_container">
+          <input
+            className="input"
+            type="text"
+            value={filterValue}
+            onChange={onFilterChange}
+            disabled={disabled}
+            placeholder="type to filter"
+          />
+        </div>
         <FilterableSource
           component={SourcePickerComponent}
           targetProps={rest}
