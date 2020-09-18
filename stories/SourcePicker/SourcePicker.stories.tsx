@@ -3,12 +3,13 @@ import { generateFakeSources } from '../../src/utils/fakeDataGenerator'
 import { SourcePicker } from '../../src/SourcePicker/'
 import { ISourcePickerProps } from '../../src/SourcePicker/SourcePicker'
 import { VALUE_ALL, VALUE_SINGLE, VALUE_NONE } from '../../src'
-import '../../src/styles.css'
 import { StylesWrapper } from '../StylesWrapper/StylesWrapper'
 import '../StylesWrapper/styles.css'
 import { ISourceEntity } from '../../src/domain/ISourceEntity'
 import { SourcePickerHoc } from '../hoc/SourcePicker'
 import { action } from '@storybook/addon-actions'
+import '../../src/styles.css'
+
 const FAKE_SOURCES = generateFakeSources(10)
 
 const defaultProps: Partial<ISourcePickerProps> = {
@@ -97,6 +98,7 @@ WithInactiveInfo.args = {
   value: { type: VALUE_SINGLE, value: FAKE_SOURCES[2] },
   showInactiveInfo: true,
 } as ISourcePickerProps
+
 // ### DISABLED
 export const Disabled = (args: ISourcePickerProps) => (
   <StylesWrapper>
@@ -111,17 +113,26 @@ Disabled.args = {
   onSelect: action('onSelect'),
 } as ISourcePickerProps
 
+// ### EMPTY
+export const Empty = (args: ISourcePickerProps) => (
+  <StylesWrapper>
+    <SourcePicker {...args} />
+  </StylesWrapper>
+)
+
+Empty.args = {
+  ...defaultProps,
+  allowSelectAllOption: true,
+  data: [],
+  onSelect: action('onSelect'),
+} as ISourcePickerProps
+
 // ### INTERACTIVE EXAMPLE
 export const Interactive = () => (
   <StylesWrapper>
     <SourcePickerHoc />
   </StylesWrapper>
 )
-
-// Interactive.args = {
-//   ...defaultProps,
-//   data: FAKE_SOURCES,
-// } as ISourcePickerProps
 
 // export default { title: 'SourcePicker', argTypes: { onSelect: { action: 'onSelect' } } }
 export default { title: 'SourcePicker' }

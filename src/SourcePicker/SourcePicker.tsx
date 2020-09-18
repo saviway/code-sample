@@ -95,6 +95,7 @@ export function SourcePickerComponent(props: SourcePickerComponentProps): JSX.El
 export function SourcePicker(props: ISourcePickerProps): JSX.Element {
   const { allowFiltering, filterFn, ...rest } = props
   const [filterValue, setFilterValue] = useState('')
+  const disabled = rest.disabled
 
   const onFilterChange = (e: ChangeEvent<HTMLInputElement>) => setFilterValue(e.target.value)
 
@@ -105,7 +106,7 @@ export function SourcePicker(props: ISourcePickerProps): JSX.Element {
   if (allowFiltering) {
     return (
       <div className="source-picker-wrapper">
-        <input type="text" value={filterValue} onChange={onFilterChange} />
+        <input type="text" value={filterValue} onChange={onFilterChange} disabled={disabled} />
         <FilterableSource
           component={SourcePickerComponent}
           targetProps={rest}
