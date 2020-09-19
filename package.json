@@ -7,6 +7,7 @@
   "scripts": {
     "build": "NODE_ENV=production rm -rf ./dist && npx rollup -c",
     "test": "jest",
+    "pack": "npm pack",
     "storybook": "start-storybook --ci -p 6006",
     "commitlint": "node ./node_modules/commitlint/cli.js",
     "prettier": "./node_modules/prettier/bin-prettier.js --write ./src"
