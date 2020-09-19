@@ -1,7 +1,7 @@
 {
   "name": "@tradefora-ui/dataguard-symbol-picker",
   "version": "3.0.0-alpha",
-  "description": "A template to fast create npm packages which contain react components",
+  "description": "Source symbol picker",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "scripts": {
