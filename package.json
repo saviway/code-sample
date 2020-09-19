@@ -24,6 +24,9 @@
     "template",
     "reactjs"
   ],
+  "publishConfig": {
+    "registry": "https://nexus.tradefora.com/repository/npm-prod/"
+  },
   "typings": "./dist/index.d.ts",
   "files": [
     "dist/**/*"
