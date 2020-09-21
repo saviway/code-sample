@@ -77,14 +77,11 @@ export function SourcePickerComponent(props: SourcePickerComponentProps): JSX.El
               )}
             >
               {s.name}
-              {showInactiveInfo && s.ended && true && (
-                <span>
-                  Inactive since: &nbsp;
-                  {inActiveComponent
-                    ? inActiveComponent(s.ended)
-                    : defaultInactiveComponent(s.ended)}
-                </span>
-              )}
+              {showInactiveInfo && s.ended && true && inActiveComponent
+                
+                ? inActiveComponent(s.ended)
+                : defaultInactiveComponent(s.ended!)
+              }
             </li>
           ))}
         </ul>

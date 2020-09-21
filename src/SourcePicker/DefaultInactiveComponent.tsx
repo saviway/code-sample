@@ -5,5 +5,5 @@ export type DefaultInactiveComponentProps = {
 }
 
 export function defaultInactiveComponent(ts: number): JSX.Element {
-  return <span>{new Date(ts).toISOString()}</span>
+  return <span>Inactive since: {new Date(ts).toISOString()}</span>
 }
