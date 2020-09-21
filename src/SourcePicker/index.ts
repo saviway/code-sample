@@ -1,1 +1,6 @@
-export { SourcePicker } from './SourcePicker'
+export {
+  SourcePicker,
+  SourcePickerComponent,
+  ISourcePickerProps,
+  SourcePickerComponentProps,
+} from './SourcePicker'

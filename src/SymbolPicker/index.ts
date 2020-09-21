@@ -1,1 +1,6 @@
-import { SymbolPicker, SymbolPickerComponent } from './SymbolPicker'
+export {
+  SymbolPicker,
+  SymbolPickerComponent,
+  ISymbolPickerProps,
+  SymbolPickerComponentProps,
+} from './SymbolPicker'
