@@ -1,0 +1,53 @@
+{
+  "name": "@tradefora-ui/dataguard-symbol-picker",
+  "version": "3.0.0-alpha",
+  "description": "Source symbol picker",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "scripts": {
+    "build": "NODE_ENV=production rm -rf ./dist && npx rollup -c",
+    "test": "jest",
+    "pack": "npm pack",
+    "storybook": "start-storybook --ci -p 6006",
+    "commitlint": "node ./node_modules/commitlint/cli.js",
+    "prettier": "./node_modules/prettier/bin-prettier.js --write ./src"
+  },
+  "author": "Ivan Savinov - noFl3x",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "keywords": [
+    "npm package",
+    "typescript",
+    "boilerplate",
+    "template",
+    "reactjs"
+  ],
+  "typings": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@types/jest": "^26.0.13",
+    "commitlint": "^11.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "prettier": "^2.1.2",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.27.0",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
+  }
+}
