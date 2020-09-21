@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, Fragment } from 'react'
 import { SelectedValue, SelectedValueType, VALUE_SINGLE, VALUE_ALL } from '..'
 import { ISourceEntity } from '../domain/ISourceEntity'
 import clsx from 'clsx'
@@ -77,11 +77,13 @@ export function SourcePickerComponent(props: SourcePickerComponentProps): JSX.El
               )}
             >
               {s.name}
-              {showInactiveInfo && s.ended && true && inActiveComponent
-                
-                ? inActiveComponent(s.ended)
-                : defaultInactiveComponent(s.ended!)
-              }
+              {showInactiveInfo && s.ended && true && (
+                <Fragment>
+                  {inActiveComponent
+                    ? inActiveComponent(s.ended)
+                    : defaultInactiveComponent(s.ended!)}
+                </Fragment>
+              )}
             </li>
           ))}
         </ul>
