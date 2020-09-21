@@ -1,1 +1,6 @@
-export { SourceSymbolPicker, SourceSymbolPickerProps } from './SourceSymbolPicker'
+export {
+  SourceSymbolPicker,
+  SourceSymbolPickerProps,
+  SourceOptions,
+  SymbolOptions,
+} from './SourceSymbolPicker'
