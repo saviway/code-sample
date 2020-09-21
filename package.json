@@ -1,6 +1,6 @@
 {
   "name": "@tradefora-ui/dataguard-symbol-picker",
-  "version": "3.0.0-alpha.5",
+  "version": "3.0.0-alpha.6",
   "description": "Source symbol picker",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
