@@ -4,10 +4,12 @@ import { ISymbolEntity } from '../domain/ISymbolEntity'
 import clsx from 'clsx'
 import { FilterableSource } from '../FilterableSource/FilterableSource'
 
+export type SelectedSymbolValue = SelectedValue<SelectedValueType, ISymbolEntity | null>
+
 export type SymbolPickerComponentProps = {
-  value: SelectedValue<SelectedValueType, ISymbolEntity | null>
+  value: SelectedSymbolValue
   data: Array<ISymbolEntity>
-  onSelect: (value: SelectedValue<SelectedValueType, ISymbolEntity | null>) => void
+  onSelect: (value: SelectedSymbolValue) => void
   allowSelectAllOption?: boolean
   disabled?: boolean
   showSourceName?: boolean

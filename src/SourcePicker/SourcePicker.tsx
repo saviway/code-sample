@@ -5,10 +5,12 @@ import clsx from 'clsx'
 import { defaultInactiveComponent } from './DefaultInactiveComponent'
 import { FilterableSource } from '../FilterableSource/FilterableSource'
 
+export type SelectedSourceValue = SelectedValue<SelectedValueType, ISourceEntity | null>
+
 export type SourcePickerComponentProps = {
-  value: SelectedValue<SelectedValueType, ISourceEntity | null>
+  value: SelectedSourceValue
   data: Array<ISourceEntity>
-  onSelect: (value: SelectedValue<SelectedValueType, ISourceEntity | null>) => void
+  onSelect: (value: SelectedSourceValue) => void
   allowSelectAllOption?: boolean
   disabled?: boolean
   showInactiveInfo?: boolean

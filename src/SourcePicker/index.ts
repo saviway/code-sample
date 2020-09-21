@@ -3,4 +3,5 @@ export {
   SourcePickerComponent,
   ISourcePickerProps,
   SourcePickerComponentProps,
+  SelectedSourceValue,
 } from './SourcePicker'

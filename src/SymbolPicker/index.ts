@@ -3,4 +3,5 @@ export {
   SymbolPickerComponent,
   ISymbolPickerProps,
   SymbolPickerComponentProps,
+  SelectedSymbolValue,
 } from './SymbolPicker'
