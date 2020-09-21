@@ -54,12 +54,14 @@ ul.symbols-list_ul li.disabled, ul.symbols-list_ul li.disabled:hover {
     background: #f1f2f4;
 }
 
-/* Common styles for lists' active item */
 ul.sources-list_ul li.item.active, ul.symbols-list_ul li.item.active {
     background-color: #f0f6ff;
     border-left: 3px solid #0070e0;
-    box-shadow: inset -2px 0 0 #d0d9e2;
     color: #000;
+}
+/* Fix for sources active item */
+ul.sources-list_ul li.item.active {
+    box-shadow: inset -2px 0 0 #d0d9e2;
 }
 
 /* common styles for select all item */

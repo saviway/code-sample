@@ -34,7 +34,7 @@ export function SymbolPickerComponent(props: SymbolPickerComponentProps): JSX.El
 
   return (
     <div className={clsx({ disabled }, 'symbols-list')}>
-      {!isSymbolsExist && <div className="empty">Symbols is empty or hidden by filters</div>}
+      {!isSymbolsExist && <div className="empty">Symbols are empty or hidden by filter</div>}
 
       <ul className="symbols-list_ul">
         {allowSelectAllOption && isSymbolsExist && (
