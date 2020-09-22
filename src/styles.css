@@ -68,7 +68,7 @@ ul.sources-list_ul li.item.active {
 ul.sources-list_ul li.select-all-item, ul.symbols-list_ul li.select-all-item {
     padding: .8rem;
     cursor: pointer;
-    font-weight: 500;
+    /* font-weight: 500; */
     font-size: .8rem;
     text-transform: uppercase;
     border-bottom: 1px solid #d0d9e2;
